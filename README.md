@@ -21,7 +21,8 @@ Budget Calculator es una aplicación que te ayuda a gestionar tu salario, gastos
 - **UI neomorfista en tema oscuro**  
 
 ## 📸 Capturas de pantalla  
-*(Aquí puedes agregar imágenes de la app en funcionamiento)*  
+![Img2](https://github.com/user-attachments/assets/e4ad8ac5-9dea-4a05-baa4-37a03025d9c3)
+![Img1](https://github.com/user-attachments/assets/a273e641-610a-4b46-a4fa-66e274cfec18)
 
 ## 🚀 Instalación  
 1. Descarga el archivo APK para Android o el ejecutable para PC desde la sección de **Releases**.  
@@ -33,3 +34,5 @@ Actualmente en desarrollo con futuras mejoras y nuevas características en camin
 
 ## 📩 Contacto  
 Si tienes sugerencias o encuentras algún bug, ¡no dudes en crear un **issue** o contactarme!  
+
+
