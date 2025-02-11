@@ -1,0 +1,1 @@
+C:\Users\randy\OneDrive\Documentos\UnityProjects\Unity-BugdetManager\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\3g574o3g\obj\arm64-v8a

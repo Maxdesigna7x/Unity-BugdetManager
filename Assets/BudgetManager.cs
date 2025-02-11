@@ -94,6 +94,7 @@ public class BudgetManager : MonoBehaviour
         debt = 0;
 
         PlayerPrefs.DeleteAll();
+        DeleteAllExpenses();
         InicialSetup();
         UpdateUI();
     }
@@ -219,6 +220,7 @@ public class BudgetManager : MonoBehaviour
         Button deleteButton = newExpense.GetComponentInChildren<Button>();
         if (deleteButton != null)
         {
+            Debug.Log("Delete Button");
             deleteButton.onClick.AddListener(() => DeleteExpense(newExpense, expenseType, value));
         }
 
@@ -233,6 +235,7 @@ public class BudgetManager : MonoBehaviour
 
     public void DeleteExpense(GameObject expenseInstance, int type, float value)
     {
+        Debug.Log("Delete void initiated");
         Destroy(expenseInstance);
         expenseInstances.Remove(expenseInstance);
         savedExpenses.RemoveAll(expense => expense.name == expenseInstance.GetComponentInChildren<TMP_Text>().text && expense.value == value && expense.type == type);
@@ -240,6 +243,7 @@ public class BudgetManager : MonoBehaviour
         CalculateAllValues();
         SaveData();
         UpdateUI();
+        Debug.Log("Delete void finish");
     }
 
     public void DeleteAllExpenses()
@@ -356,10 +360,10 @@ public class BudgetManager : MonoBehaviour
         PlayerPrefs.SetFloat("SavingsPercentage", savingsPercentage);
         PlayerPrefs.SetFloat("Available", available);
         PlayerPrefs.SetFloat("TotalExpenses", totalExpenses);
-        PlayerPrefs.SetFloat("MonthlyExpenses", monthlyExpenses);
-        PlayerPrefs.SetFloat("WeeklyExpenses", weeklyExpenses);
-        PlayerPrefs.SetFloat("DailyExpenses", dailyExpenses);
-        PlayerPrefs.SetFloat("UniqueExpenses", uniqueExpenses);
+        //PlayerPrefs.SetFloat("MonthlyExpenses", monthlyExpenses);
+        //PlayerPrefs.SetFloat("WeeklyExpenses", weeklyExpenses);
+        //PlayerPrefs.SetFloat("DailyExpenses", dailyExpenses);
+        //PlayerPrefs.SetFloat("UniqueExpenses", uniqueExpenses);
         PlayerPrefs.SetString("SavedExpenses", JsonUtility.ToJson(new Serialization<ExpenseData>(savedExpenses)));
         PlayerPrefs.Save();
     }
@@ -370,10 +374,10 @@ public class BudgetManager : MonoBehaviour
         savingsPercentage = PlayerPrefs.GetFloat("SavingsPercentage", 0);
         available = PlayerPrefs.GetFloat("Available", 0);
         totalExpenses = PlayerPrefs.GetFloat("TotalExpenses", 0);
-        monthlyExpenses = PlayerPrefs.GetFloat("MonthlyExpenses", 0);
-        weeklyExpenses = PlayerPrefs.GetFloat("WeeklyExpenses", 0);
-        dailyExpenses = PlayerPrefs.GetFloat("DailyExpenses", 0);
-        uniqueExpenses = PlayerPrefs.GetFloat("UniqueExpenses", 0);
+        //monthlyExpenses = PlayerPrefs.GetFloat("MonthlyExpenses", 0);
+        //weeklyExpenses = PlayerPrefs.GetFloat("WeeklyExpenses", 0);
+        //dailyExpenses = PlayerPrefs.GetFloat("DailyExpenses", 0);
+        //uniqueExpenses = PlayerPrefs.GetFloat("UniqueExpenses", 0);
         string savedExpensesJson = PlayerPrefs.GetString("SavedExpenses", JsonUtility.ToJson(new Serialization<ExpenseData>(new List<ExpenseData>())));
         savedExpenses = JsonUtility.FromJson<Serialization<ExpenseData>>(savedExpensesJson).ToList();
     }

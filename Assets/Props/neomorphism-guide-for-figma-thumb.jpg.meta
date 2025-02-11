@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      neomorphism-guide-for-figma-thumb_0: 3518134189405173541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
